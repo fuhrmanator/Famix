@@ -334,12 +334,11 @@ SmalltalkImporter >> ensureAttribute: name for: aClass [
 ]
 
 { #category : #'public-entity-creation' }
-SmalltalkImporter >> ensureClass: aClass [ 
-	"aClass is aSmalltalk. This method returns a FAMIXClass" 
-	 
-	^classes 
-		at: aClass 
-		ifAbsent: [self createClass: aClass]
+SmalltalkImporter >> ensureClass: aClass [
+
+	"aClass is aSmalltalk. This method returns a FamixStClass"
+
+	^ classes at: aClass ifAbsent: [ self createClass: aClass ]
 ]
 
 { #category : #'public-entity-creation' }
@@ -374,17 +373,22 @@ SmalltalkImporter >> ensureImplicitVariable: name inClass: aClass [
 ]
 
 { #category : #'public-entity-creation' }
-SmalltalkImporter >> ensureImplicitVariable: name inFamixMethod: aFAMIXMethod [
-	
+SmalltalkImporter >> ensureImplicitVariable: name inFamixMethod: aFamixStMethod [
+
 	"^ others detect: [:aFamixEntity |
-		aFamixEntity mooseName = (aFAMIXMethod mooseName,'.',name) asSymbol
+		aFamixEntity mooseName = (aFamixStMethod mooseName,'.',name) asSymbol
 		] ifNone: [
-			self createSpecialVariable: name forFamixMethod: aFAMIXMethod
+			self createSpecialVariable: name forFamixMethod: aFamixStMethod
 		]."
-	
+
 	"I'm not sure using a dictionary of dictionaries is the best solution, But it is at least really better than the first solution above"
-	^ (implicitVariables at: aFAMIXMethod ifAbsentPut: [Dictionary new])
-		at: name ifAbsentPut: [self createSpecialVariable: name forFamixMethod: aFAMIXMethod].
+
+	^ (implicitVariables
+		   at: aFamixStMethod
+		   ifAbsentPut: [ Dictionary new ])
+		  at: name
+		  ifAbsentPut: [ 
+		  self createSpecialVariable: name forFamixMethod: aFamixStMethod ]
 ]
 
 { #category : #'public-entity-creation' }

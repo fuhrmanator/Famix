@@ -126,8 +126,9 @@ MooseObject class >> isAbstract [
 ]
 
 { #category : #testing }
-MooseObject class >> isOfType: aClassFAMIX [
-	^ self superclassesAndFamixTraits includes: aClassFAMIX
+MooseObject class >> isOfType: aFamixClassOrTrait [
+
+	^ self superclassesAndFamixTraits includes: aFamixClassOrTrait
 ]
 
 { #category : #accessing }
@@ -353,8 +354,9 @@ MooseObject >> isMooseModel [
 ]
 
 { #category : #testing }
-MooseObject >> isOfType: aClassFAMIX [
-	^ self class isOfType: aClassFAMIX
+MooseObject >> isOfType: aFamixClassOrTrait [
+
+	^ self class isOfType: aFamixClassOrTrait
 ]
 
 { #category : #accessing }

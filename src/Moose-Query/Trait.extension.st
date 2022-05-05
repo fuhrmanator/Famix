@@ -8,6 +8,8 @@ Trait >> implementingClassesIn: aMetamodel [
 ]
 
 { #category : #'*Moose-Query' }
-Trait >> inheritsFromType: aClassFAMIX [
-	^ ({self} , self traits flatCollect: #withAllSuperclasses as: Set) includes: aClassFAMIX
+Trait >> inheritsFromType: aFamixClassOrTrait [
+
+	^ ({ self } , self traits flatCollect: #withAllSuperclasses as: Set) 
+		  includes: aFamixClassOrTrait
 ]

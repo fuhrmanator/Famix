@@ -10,30 +10,52 @@ Trait {
 
 { #category : #querying }
 TMooseGroupDependencyQueries >> queryAllIncoming [
-	^ MooseIncomingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryAllIncoming ])
+
+	^ MooseIncomingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | m queryAllIncoming ])
 ]
 
 { #category : #querying }
 TMooseGroupDependencyQueries >> queryAllOutgoing [
-	^ MooseOutgoingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryAllOutgoing ])
+
+	^ MooseOutgoingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | m queryAllOutgoing ])
 ]
 
 { #category : #querying }
-TMooseGroupDependencyQueries >> queryIncoming: aFAMIXClassAssociation [
-	^ MooseIncomingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryIncoming: aFAMIXClassAssociation ])
+TMooseGroupDependencyQueries >> queryIncoming: aFamixClassAssociation [
+
+	^ MooseIncomingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | 
+				   m queryIncoming: aFamixClassAssociation ])
 ]
 
 { #category : #querying }
-TMooseGroupDependencyQueries >> queryLocalIncoming: aFAMIXClassAssociation [
-	^ MooseIncomingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryLocalIncoming: aFAMIXClassAssociation ])
+TMooseGroupDependencyQueries >> queryLocalIncoming: aFamixClassAssociation [
+
+	^ MooseIncomingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | 
+				   m queryLocalIncoming: aFamixClassAssociation ])
 ]
 
 { #category : #querying }
-TMooseGroupDependencyQueries >> queryLocalOutgoing: aFAMIXClassAssociation [
-	^ MooseOutgoingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryLocalOutgoing: aFAMIXClassAssociation ])
+TMooseGroupDependencyQueries >> queryLocalOutgoing: aFamixClassAssociation [
+
+	^ MooseOutgoingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | 
+				   m queryLocalOutgoing: aFamixClassAssociation ])
 ]
 
 { #category : #querying }
-TMooseGroupDependencyQueries >> queryOutgoing: aFAMIXClassAssociation [
-	^ MooseOutgoingQueryResult on: self withAll: (self entities flatCollect: [ :m | m queryOutgoing: aFAMIXClassAssociation ])
+TMooseGroupDependencyQueries >> queryOutgoing: aFamixClassAssociation [
+
+	^ MooseOutgoingQueryResult
+		  on: self
+		  withAll: (self entities flatCollect: [ :m | 
+				   m queryOutgoing: aFamixClassAssociation ])
 ]

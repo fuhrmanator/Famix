@@ -1,7 +1,7 @@
 Extension { #name : #UndefinedObject }
 
 { #category : #'*Moose-Query' }
-UndefinedObject >> isIncludedIn: aFAMIXLocalVariable parentSelectorsCache: aCollection [
+UndefinedObject >> isIncludedIn: aFamixLocalVariable parentSelectorsCache: aCollection [
 	"Only present for performance reasons."
 
 	^ false

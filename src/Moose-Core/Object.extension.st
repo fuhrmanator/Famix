@@ -29,7 +29,8 @@ Object >> isMooseEntity [
 ]
 
 { #category : #'*Moose-Core' }
-Object class >> isOfType: aClassFAMIX [
+Object class >> isOfType: aFamixClassOrTrait [
+
 	^ false
 ]
 

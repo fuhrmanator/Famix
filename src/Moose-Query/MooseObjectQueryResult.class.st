@@ -25,8 +25,10 @@ MooseObjectQueryResult >> executeScopeQuery: aQuery [
 ]
 
 { #category : #evaluating }
-MooseObjectQueryResult >> outOf: aFAMIXEntity [
-	^ self newObjectResultWith: (storage reject: [ :obj | (obj allAtScope: aFAMIXEntity class) includes: aFAMIXEntity ])
+MooseObjectQueryResult >> outOf: aMooseEntity [
+
+	^ self newObjectResultWith: (storage reject: [ :obj | 
+			   (obj allAtScope: aMooseEntity class) includes: aMooseEntity ])
 ]
 
 { #category : #'as yet unclassified' }
@@ -37,8 +39,10 @@ MooseObjectQueryResult >> relationsNamed: aSymbol [
 ]
 
 { #category : #evaluating }
-MooseObjectQueryResult >> within: aFAMIXEntity [
-	^ self newObjectResultWith: (storage select: [ :obj | (obj allAtScope: aFAMIXEntity class) includes: aFAMIXEntity ])
+MooseObjectQueryResult >> within: aMooseEntity [
+
+	^ self newObjectResultWith: (storage select: [ :obj | 
+			   (obj allAtScope: aMooseEntity class) includes: aMooseEntity ])
 ]
 
 { #category : #filtering }

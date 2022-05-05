@@ -146,7 +146,8 @@ MooseQueryResult >> newObjectResultWith: aCollection [
 ]
 
 { #category : #filtering }
-MooseQueryResult >> outOf: aFAMIXEntity [
+MooseQueryResult >> outOf: aMooseEntity [
+
 	"Return the results which are out the entity as parameter."
 
 	^ self subclassResponsibility
@@ -239,7 +240,8 @@ MooseQueryResult >> withScope: aClassFamix [
 ]
 
 { #category : #filtering }
-MooseQueryResult >> within: aFAMIXEntity [
+MooseQueryResult >> within: aMooseEntity [
+
 	"Return the results which are in the entity as parameter."
 
 	^ self subclassResponsibility
